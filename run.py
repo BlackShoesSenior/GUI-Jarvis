@@ -11,6 +11,7 @@ import os
 import time
 import webbrowser
 import datetime
+from lshotword import ls
 
 
 flags = QtCore.Qt.WindowFlags(QtCore.Qt.FramelessWindowHint)
@@ -58,6 +59,7 @@ class mainT(QThread):
     def JARVIS(self):
         wish()
         while True:
+            ls.lshotword_loop()
             self.query = self.STT()
             if 'good bye' in self.query:
                 sys.exit()
